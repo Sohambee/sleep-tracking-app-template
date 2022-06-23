@@ -56,13 +56,12 @@ const useStyles = makeStyles({
 })
 
 export default function Login() {
+  const classes = useStyles();
+
     return (
         <Box>
             <Box className={classes.container}>
                 <Box className={classes.alertBox}>
-                    {flag && (
-                        <Alert className={classes.alert} severity='error'>{res}</Alert>
-                    )}
                 </Box>
                 <form className={classes.form}>
                     <Typography className={classes.title}>Login</Typography>

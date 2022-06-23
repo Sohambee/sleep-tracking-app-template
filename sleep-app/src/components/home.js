@@ -43,6 +43,8 @@ const useStyles = makeStyles({
 })
 
 export default function Home() {
+  const classes = useStyles();
+
   return (
     <Box sx={{ height: '100%' }}>
       <Box className={classes.container}>
@@ -70,7 +72,6 @@ export default function Home() {
                   variant='standard'
                   InputLabelProps={{ shrink: true, required: true }}
                   type="date"
-                  defaultValue={dateToday}
                 />
                 <TextField
                   id="hours"
@@ -78,13 +79,12 @@ export default function Home() {
                   label="Hours Slept"
                   variant='standard'
                   sx={{ marginLeft: '10px', width: '100px' }}
-                  defaultValue={hours}
                   autoComplete="false"
                   InputProps={{ inputProps: { min: 0, max: 24 } }}
                   InputLabelProps={{ shrink: true, required: true }}
                 />
               </Box>
-              <Button variant='contained' onClick={handleSubmit}>Set</Button>
+              <Button variant='contained'>Set</Button>
             </form>
           </Box>
           <Divider sx={{ marginTop: '20px', marginBottom: '20px' }} />
